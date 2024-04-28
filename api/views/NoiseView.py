@@ -1,14 +1,9 @@
-import socket
-
-from django.http import JsonResponse, HttpResponse
-from django.views import View
-from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .models import Noise
-from .serializers.noise import NoiseSerializer
+from api.models import Noise
+from api.serializers.noise import NoiseSerializer
 
 
 class NoiseView(APIView):

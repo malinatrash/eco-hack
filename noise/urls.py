@@ -17,10 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from api.views import NoiseView
+from api.views.NoiseSingleView import NoiseSingleView
+from api.views.NoiseView import NoiseView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/noise/', NoiseSingleView.as_view(), name='noise-single'),
     path('api/noises/', NoiseView.as_view(), name='noise-list'),
 ]
 
